@@ -27,7 +27,7 @@ coffee = {'hari','krishna','durga'}
 
 #union
 #tea_or_coffee=tea|coffee # union(|) or union() method
-print(tea_or_coffee)
+# print(tea_or_coffee)
 tea_or_coffee = tea.union(coffee)
 
 #intersection
