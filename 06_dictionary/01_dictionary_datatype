@@ -1,0 +1,19 @@
+ #dictionary datatype
+person={
+    "name":"Ram",
+    "id":1,
+    "age":22,
+    "contact":1234567,
+    "salary":3245.678, #last comma is optional
+}
+print(person,type(person))
+person['name'] #accessing elements .output: 'Ram'
+person['email']="bikash@gmail.com" #adding new key value pairs at the last ie.{'name': 'Ram', 'id': 1, 'age': 22, 'contact': 1234567, 'salary': 3245.678, 'email': 'bikash@gmail.com'}
+person.update({"college":"snsc", "location":"mnr"}) #this update method also add the new key value pairs to the dictionary at the last position
+print(person)
+del person['age'] #deleting existing key value pair using del
+print(person)# {'name': 'Ram', 'id': 1, 'contact': 1234567, 'salary': 3245.678, 'email': 'bikash@gmail.com'}
+#person.clear()# clear() method:removes all the data from dictionary and returns empty dictionary
+print(person)# output : {}
+person.values() #values() method returns all the values of keys
+person.items()# items() method returns all the keys and values output: dict_items([('name', 'Ram'), ('id', 1), ('contact', 1234567), ('salary', 3245.678), ('email', 'bikash@gmail.com'), ('college', 'snsc'), ('location', 'mnr')])
