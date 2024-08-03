@@ -1,4 +1,13 @@
- #dictionary datatype
+ #dictionary datatype:
+''' 
+->A dictionary is used to store data values  in key :value pairs
+->A dictionary is  an unordered collection that means you cannot access elements using index and doesnot allow duplicate
+->A dictionary is a mutable type so you can modify them
+->There are different methods to acess the dictionary elements like keys(),values(),items().    
+->clear() method deletes all the key value pairs
+important:
+It doesn’t allow duplicates in Keys. In case, you add duplicates, which will update the existing keys of the Python dictionary.
+'''
 person={
     "name":"Ram",
     "id":1,
@@ -8,12 +17,78 @@ person={
 }
 print(person,type(person))
 person['name'] #accessing elements .output: 'Ram'
+
 person['email']="bikash@gmail.com" #adding new key value pairs at the last ie.{'name': 'Ram', 'id': 1, 'age': 22, 'contact': 1234567, 'salary': 3245.678, 'email': 'bikash@gmail.com'}
-person.update({"college":"snsc", "location":"mnr"}) #this update method also add the new key value pairs to the dictionary at the last position
+
+person.update({"college":"snsc", "location":"mnr"}) #this update method also add the new key value pairs to the dictionary at the last position if not found any key in a dictionary . if there is a existing key in a dictionary then update method updates the existing key with values.
 print(person)
-del person['age'] #deleting existing key value pair using del
+
+del person['age'] #deletes existing key value pair using del
 print(person)# {'name': 'Ram', 'id': 1, 'contact': 1234567, 'salary': 3245.678, 'email': 'bikash@gmail.com'}
 #person.clear()# clear() method:removes all the data from dictionary and returns empty dictionary
+
 print(person)# output : {}
-person.values() #values() method returns all the values of keys
+print(person.values()) #values() method returns all the values of keys.output dict_values(['Ram', 1, 1234567, 3245.678, 'bikash@gmail.com', 'snsc', 'mnr'])
+
 person.items()# items() method returns all the keys and values output: dict_items([('name', 'Ram'), ('id', 1), ('contact', 1234567), ('salary', 3245.678), ('email', 'bikash@gmail.com'), ('college', 'snsc'), ('location', 'mnr')])
+
+print(person.keys()) #dict_keys(['name', 'id', 'contact', 'salary', 'email', 'college', 'location'])
+
+#pop(key) : it deletes the corresponding keys and returns it values
+print(person.pop('location')) # output: mnr
+print(person) # {'name': 'Ram', 'id': 1, 'contact': 1234567, 'salary': 3245.678, 'email': 'bikash@gmail.com', 'college': 'snsc'} now see pop(key) method removes the key "location" from dictionary and return its value (mnr)
+
+#popitem(): it deletes an arbitrary items form dictionary and return (key,value)
+print(person.popitem()) # ('college', 'snsc')
+print(person) # {'name': 'Ram', 'id': 1, 'contact': 1234567, 'salary': 3245.678, 'email': 'bikash@gmail.com'}
+print(person.popitem()) # ('email', 'bikash@gmail.com')
+
+
+# can also add different data types in a single dictionary
+information={
+    'name':'Bikash',
+    'rollno':12,
+    'location':'Mnr',
+    'is_adult':True ,
+    'subject':["python","java","C sharp","C++"], # we can also use list as values in a python 
+    'topics':('dict','set'),# tuples as values
+    ('x','y'):12, # A tuple would be useful as a key when storing values associated with a grid or some other coordinate type system.
+    ('a','b'):14,
+    (12,2):56,
+    #[1,2]:"list" # this will throw TypeError like: unhashable type: 'list' because list is mutable
+}
+print(information['subject'])
+print(information[('x','y')])
+print(information[(12,2)])
+'''
+Remember:In a dictionary every types of values(dict,set,list,tuples) can be acceptable but in case of keys except list and dictionary every types of keys(numbers,string,tuples,etc)can be acceptable . because list and dictionary are mutable they are changeable. Tuple can be a keys because tuples are immutable . keys shouldnot be duplicate and changeable therfore it is not allowed to use dictionary and list as keys in dictionaries.
+'''
+
+#nested dictionaries
+student={
+    "name":"Ram",
+    "subject":{
+        "phy":23,
+        "chem":34,
+        "maths":56
+    }
+}
+print(student) # {'name': 'Ram', 'subject': {'phy': 23, 'chem': 34, 'maths': 56}}
+print(student['subject']) # {'phy': 23, 'chem': 34, 'maths': 56}
+print(student['subject']['chem']) # 34
+
+'''
+there are two ways to access the values using keys in a dictionary.
+1st way : dict_name["key"]
+2nd eay : dict_name.get("key")
+
+now what is the difference between them.
+In a 1st way, the  dict_name["key"] returns the values corresponding to the key and if the key is not exist there then it returns error
+In a 2nd way, the dict_name["keys"] returns the values corresponding to the key and doesnot return error if key doesnot exist there but in that case it returns None.
+
+'''
+print(student["name"]) # Ram
+print(student.get("name")) # Ram
+
+#print(student["name1"]) # It will throw error like: KeyError: 'name1', because name1 doesnot exist in dictionary as keys
+print(student.get("name1")) #  output:None .It doesnot throw error
