@@ -1,12 +1,20 @@
 #set datatype
-#set is mutable datastructure => can be changed once declared 
+'''
+set is mutable datastructure => can be changed once declared.
+set is the collection of unordered items.
+Each elements in the set must be unique and immutable ie no any duplicate elements should be there in set 
+Remember: since the elements of the set are immutable so we cannot store list and dictionary as a sets element because dictionary and list are mutable '''
 s={1,2,3,4,5}
 #print(s,type(s))
 s={'ram',1,(7,8,9),4.5}
-print(s) # {'ram', 4.5, 1, (7, 8, 9)} : therefore set is a unordered collection.
+print(s) # {'ram', 4.5, 1, (7, 8, 9)} : therefore set is a unordered collection since 4.5 comes before (7,8,9)
 
 t={1,2,'ram',2,'hari',(1,2),'ram',(2,1)}
 print(t)# {1, 2, (1, 2), (2, 1), 'ram', 'hari'} :therefore set is a unique collection
+print(len(t)) # 6
+
+#set={1,("hello","world"),{"name":"Bikash","rollno":12}}# it will throw errror like  TypeError: unhashable type: 'dict', beacuse each element of set should be immutable but here dictionary(mutable) is present as element 
+print(set)
 
 #q={1,2,[4,5],("ram", "shyam")}
 #print(q) # it will throw error because set cannot store mutable/unhasable data structure , here it stores [4,5] which is list(mutbale) so error occurs
@@ -63,3 +71,5 @@ print(t.pop()) # takes out random data from set
 
 #clear all the data
 #t.clear()
+
+#hashable=>immutable, unhashable=>mutable
