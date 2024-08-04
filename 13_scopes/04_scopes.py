@@ -3,7 +3,7 @@ def hello():
     print(xyz)
 
 hello
-print(xyz) # error : name 'xyz' is not defined because scope of xyz is confined inside function hello
+#print(xyz) # error : name 'xyz' is not defined because scope of xyz is confined inside function hello
 
 #global scope
 name="shyam" #global scope/file level/ module level
