@@ -56,6 +56,7 @@ setthree={1,3,6}
 print(setone&setthree)#output={1, 3}
 print(setone&settwo) # output :set(). It returns the empty set because there is no any common element between setone and settwo and the empty set is represented by :set() in python. In mathematics empty set is represented by {} but in python {} represents the empty dictionary.
 print(type({})) #output :<class 'dict'>
+print(type(set())) # output:<class 'set'>
 
 print(True==1) #output=True
 print(False==0) #output=True

@@ -7,4 +7,4 @@
 
 c=int(input("Enter first number: "))
 d=int(input("Enter second number: "))
-print("the sum is:", (c + d))
+print("The Sum is:", (c + d))

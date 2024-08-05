@@ -16,3 +16,4 @@ print(type(d)) # "21.3"(string) is converted into float ie 21.3  . output : <cla
 
 print(str(21.3))
 print( float(20))
+print(type(2j))

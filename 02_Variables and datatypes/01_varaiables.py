@@ -8,6 +8,7 @@ Datatypes:
  4    Mapping	        dict	                   holds data in key-value pair form
  5    Boolean	        bool	                   holds either True or False
  6    Set	            set, frozenset	           hold collection of unique items
+ 
 '''
 # variables are like containers thata stores the value
 a=1 #numeric datatype of integer class
