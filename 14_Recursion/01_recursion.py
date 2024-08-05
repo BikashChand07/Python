@@ -11,3 +11,11 @@ def factorial(n):
         return n*factorial(n-1)
     
 print(factorial(6))
+
+
+# #recursion: calling itself
+# def hello():# this is not recursive function because there is no base condition
+#     print('hello')
+#     hello()
+
+# #hello() #this is recursion but not recursive function
