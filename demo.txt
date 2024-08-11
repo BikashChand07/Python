@@ -1,3 +1,2 @@
-hello world!
-Its me Bikash chand
-Mahendranagar, Kanchanpur
+write mode overwrites the existing file
+Thank You
